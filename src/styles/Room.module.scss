@@ -1,0 +1,94 @@
+@import './variables';
+
+.main {
+    background-image: $bg-image;
+    background-repeat: repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0 4%;
+}
+
+.section {
+    background-color: $main;
+    width: 100%;
+    // height: 90%;
+    padding: 1.5em 1em;
+    border-radius: 10px;
+}
+
+// Chat header
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: $logo;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.leave-btn {
+    padding: 0.5em;
+    background-color: $highlight;
+    color: $main;
+    text-decoration: none;
+    border: 1px solid $highlight;
+    border-radius: 7px;
+    color: $primary;
+    font-size: 0.8em;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+// Chat dashboard
+
+.chat-dashboard {
+    margin-top: 1.5em;
+    display: flex;
+    gap: 1em;
+}
+
+.chat-details {
+    width: 25%;
+}
+
+.chat-window {
+    display: flex;
+    flex-direction: column-reverse; // Display flex and flex direction make sure ChatWindow scrolls down with each new message
+    width: 90%;
+    background-color: $secondary;
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+// Chat input
+
+// .chat-input {
+//     padding-top: 1em;
+// }
+
+@media (min-width: 1023px) {
+    
+    .section {
+        padding: 1.5em 2em;
+    }
+    
+    .logo {
+        font-size: 2em;
+    }
+    
+    .leave-btn {
+        font-size: 1em;
+    }
+    
+    .chat-details {
+        width: 20%;
+    }
+
+}

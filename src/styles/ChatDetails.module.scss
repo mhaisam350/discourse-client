@@ -1,0 +1,31 @@
+@import './variables';
+
+.detail-container {
+    margin-bottom: 1.5em;
+    font-size: 0.8em;
+}
+
+.detail-heading {
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 0.7em;
+    text-decoration: underline;
+}
+
+.user:not(:last-child) {
+    margin-bottom: 0.6em;
+}
+
+.room-name,.user {
+    
+    word-wrap: break-word;
+    // max-width: 100%;
+}
+
+@media (min-width: 1023px) {
+
+    .detail-container {
+        font-size: 1em;
+    }
+
+}

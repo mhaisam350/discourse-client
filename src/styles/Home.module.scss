@@ -1,0 +1,69 @@
+@import './variables';
+
+.main {
+    background-image: $bg-image;
+    background-repeat: repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 1em;
+    overflow: hidden;
+}
+
+.section {
+    background-color: $main;
+    width: 550px;
+    padding: 2em;
+    border-radius: 10px;
+}
+
+.logo {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5em;
+    color: $logo
+}
+
+.homepage-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5em;
+    font-size: 0.8em;
+
+    & > input, select {
+        margin: 1em 0;
+        padding: 0.5em 0.2em;
+        background-color: $primary;
+        border: 1px solid $primary;
+        border-radius: 5px;
+    }
+
+    & > select {
+        cursor: pointer;
+    }
+
+    & > button {
+        margin-top: 1em;
+        padding: 0.5em 0.2em;
+        background-color: $highlight;
+        border: 1px solid $highlight;
+        border-radius: 2px;
+        color: $primary;
+        font-size: 1.3em;
+        font-weight: 500;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 1023px) {
+
+    .logo {
+        font-size: 2em;
+    }
+
+    .homepage-form {
+        font-size: 1em;
+    }
+
+}
