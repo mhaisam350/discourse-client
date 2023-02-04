@@ -36,7 +36,7 @@ export const Room = () => {
 
     useEffect(() => {
         
-        socket = io('http://192.168.18.13:4000');
+        socket = io('discourse-server-production.up.railway.app');
 
         setUsername(sessionStorage.getItem('username'));
         setRoom(sessionStorage.getItem('room'));
