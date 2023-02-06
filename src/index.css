@@ -24,6 +24,7 @@ time, mark, audio, video, button, input, select, textarea {
 
 html, body {
 	color: #fff;
+	font-family: 'Kanit', sans-serif;
 }
 
 /* HTML5 display-role reset for older browsers */
