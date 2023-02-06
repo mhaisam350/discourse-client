@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
+import moment from 'moment';
+
 import styles from '../styles/Room.module.scss';
 
 import { generateColor } from '../utils/generateColor';
@@ -64,7 +66,9 @@ export const Room = () => {
 
             let color = generateColor();
 
-            socket.emit('joinRoom', { username, room, color });
+            let time = moment().format('h:mm a');
+
+            socket.emit('joinRoom', { username, room, color, time });
 
         };
 

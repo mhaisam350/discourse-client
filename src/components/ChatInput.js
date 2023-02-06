@@ -1,5 +1,7 @@
 import { useState, useRef } from 'react';
 
+import moment from 'moment';
+
 import styles from '../styles/ChatInput.module.scss';
 
 export const ChatInput = ({ socket }) => {
@@ -8,12 +10,16 @@ export const ChatInput = ({ socket }) => {
 
     const [message, setMessage] = useState('');
 
+    let time;
+
     const handleSubmit = (e) => {
 
         e.preventDefault();
 
         // Check for empty input
         if (message.trim().length === 0) return;
+
+        time = moment().format('h:mm a');
 
         // Emit message to server
         socket.emit('chatMessage', message);
@@ -34,6 +40,8 @@ export const ChatInput = ({ socket }) => {
         if (e.keyCode === 13 && !e.shiftKey) {
 
             e.preventDefault();
+
+            time = moment().format('h:mm a');
 
             socket.emit('chatMessage', message);
             
