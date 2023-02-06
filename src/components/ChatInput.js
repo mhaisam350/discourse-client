@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import styles from '../styles/ChatInput.module.scss';
 
 export const ChatInput = ({ socket }) => {
+
+    const inputRef = useRef();
 
     const [message, setMessage] = useState('');
 
@@ -47,7 +49,7 @@ export const ChatInput = ({ socket }) => {
 
     <form onSubmit={handleSubmit} onKeyDown={handleEnter} className={styles.form}>
     
-        <textarea name='chat-input' placeholder='Type a message' value={message} onChange={(e) => setMessage(e.target.value)} className={styles.textarea} />
+        <textarea ref={inputRef} name='chat-input' placeholder='Type a message' value={message} onChange={(e) => setMessage(e.target.value)} className={styles.textarea} />
 
         <button type='submit' className={styles['submit-btn']}>Send</button>
 
