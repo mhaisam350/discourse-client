@@ -10,6 +10,8 @@ export const ChatInput = ({ socket }) => {
 
     const [message, setMessage] = useState('');
 
+    let time;
+
     const handleSubmit = (e) => {
 
         e.preventDefault();
@@ -17,10 +19,10 @@ export const ChatInput = ({ socket }) => {
         // Check for empty input
         if (message.trim().length === 0) return;
 
-        let time = moment().format('h:mm a');
+        time = moment().format('h:mm a');
 
         // Emit message to server
-        socket.emit('chatMessage', message);
+        socket.emit('chatMessage', { message, time });
 
         // Reset message input to empty
         setMessage('');
@@ -39,9 +41,9 @@ export const ChatInput = ({ socket }) => {
 
             e.preventDefault();
 
-            let time = moment().format('h:mm a');
+            time = moment().format('h:mm a');
 
-            socket.emit('chatMessage', message);
+            socket.emit('chatMessage', {message, time });
             
             setMessage('');
 
