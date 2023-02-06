@@ -38,6 +38,9 @@ export const Room = () => {
         
         socket = io('https://discourse-server-production.up.railway.app');
 
+        // Redirect to Home if room name and url paramater aren't set
+        if (!sessionStorage.getItem('username') || !sessionStorage.getItem('room')) navigate('/'); 
+
         setUsername(sessionStorage.getItem('username'));
         setRoom(sessionStorage.getItem('room'));
 
@@ -53,7 +56,7 @@ export const Room = () => {
 
         });
 
-    }, [])
+    }, [navigate])
 
     useEffect(() => {
 
@@ -78,7 +81,6 @@ export const Room = () => {
         }
 
         // Redirect to Home if room name and url paramater aren't the same
-
         if (roomPath !== name) {
 
             socket.disconnect();
