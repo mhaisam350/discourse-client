@@ -11,16 +11,16 @@ export const ChatInput = ({ socket }) => {
         e.preventDefault();
 
         // Check for empty input
-
         if (message.trim().length === 0) return;
 
         // Emit message to server
-
         socket.emit('chatMessage', message);
 
         // Reset message input to empty
-
         setMessage('');
+
+        // Keep focus on input after message sent
+        inputRef.current?.focus();
 
     }
 
@@ -29,7 +29,6 @@ export const ChatInput = ({ socket }) => {
         if (message.trim().length === 0) return;
 
         // Check if Enter key is pressed
-        
         if (e.keyCode === 13 && !e.shiftKey) {
 
             e.preventDefault();
@@ -37,6 +36,8 @@ export const ChatInput = ({ socket }) => {
             socket.emit('chatMessage', message);
             
             setMessage('');
+
+            inputRef.current?.focus();
 
         }
 
