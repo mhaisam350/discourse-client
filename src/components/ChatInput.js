@@ -30,7 +30,7 @@ export const ChatInput = ({ socket }) => {
 
         // Check if Enter key is pressed
         
-        if (e.keyCode === 13) {
+        if (e.keyCode === 13 && !e.shiftKey) {
 
             e.preventDefault();
 
